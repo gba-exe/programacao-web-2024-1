@@ -11,13 +11,17 @@ public class AlunoMapper {
                 .id(entity.getId())
                 .nome(entity.getNome())
                 .ra(entity.getRa())
-                .professor(
-                        AlunoListagemDto.Professor.builder()
-                            .id(entity.getProfessor().getId())
-                            .nome(entity.getProfessor().getNome())
-                            .build()
-                )
+                .professor(toProfessor(entity))
                 .build();
 
+    }
+
+    public static AlunoListagemDto.Professor toProfessor (Aluno entity) {
+        if (entity == null) return null;
+
+        return AlunoListagemDto.Professor.builder()
+                .id(entity.getProfessor().getId())
+                .nome(entity.getProfessor().getNome())
+                .build();
     }
 }
