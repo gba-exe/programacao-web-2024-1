@@ -24,4 +24,13 @@ public class AlunoMapper {
                 .nome(entity.getProfessor().getNome())
                 .build();
     }
+
+    public static Aluno toAlunoEntity(AlunoCriacaoDto dto) {
+        if (dto == null) return null;
+
+        return Aluno.builder()
+                .nome(dto.getNome())
+                .ra(dto.getRa())
+                .build();
+    }
 }
