@@ -6,7 +6,7 @@ import java.util.List;
 
 public class DiretorMapper {
 
-    public static DiretorListagemDto toListagemDto(Diretor entity) {
+    public static DiretorListagemDto toListagemDto(Dietor entity) {
         DiretorListagemDto dto = new DiretorListagemDto();
         dto.setId(entity.getId());
         dto.setNome(entity.getNome());
